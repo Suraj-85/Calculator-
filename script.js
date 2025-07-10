@@ -1,16 +1,17 @@
-function appendValue(val) {
-  document.getElementById("display").value += val;
-}
-
-function clearDisplay() {
-  document.getElementById("display").value = '';
-}
-
-function calculate() {
-  try {
-    let result = eval(document.getElementById("display").value);
-    document.getElementById("display").value = result;
-  } catch {
-    document.getElementById("display").value = "Error";
-  }
-}
+const display = document.getElementById('display');
+    function appendValue(val) {
+      display.value += val;
+    }
+    function clearDisplay() {
+      display.value = '';
+    }
+    function backspace() {
+      display.value = display.value.slice(0, -1);
+    }
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = 'Error';
+      }
+    }
